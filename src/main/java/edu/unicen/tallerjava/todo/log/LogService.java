@@ -26,8 +26,9 @@ public class LogService {
 	 */
 	public void addLog(String action, User user) {
 		Log log = new Log(UUID.randomUUID(), action, user);
-		logs.add(log);
-		logs.add(log);
+		synchronized(this) {
+			logs.add(log);
+		}
 	}
 
 	/**

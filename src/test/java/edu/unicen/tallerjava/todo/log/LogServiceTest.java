@@ -33,6 +33,7 @@ public class LogServiceTest {
         for (int i = 0; i < 100000; i++) {
             events[i] = "E" + i;
         }
+        svc = new LogService();
     }
 
     /**
