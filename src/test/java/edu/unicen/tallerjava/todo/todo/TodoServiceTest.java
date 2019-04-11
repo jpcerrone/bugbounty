@@ -80,7 +80,7 @@ public class TodoServiceTest {
 
     /**
      * Agrega 3 todos, uno cada 2 segundos. Borra todos los To-Dos que se hayan
-     * agregado hace MÁS de 5 segundos. En este caso, debería borrar solo el primero.
+     * agregado hace MaS de 5 segundos. En este caso, debería borrar solo el primero.
      *
      * @throws InterruptedException
      */
@@ -93,8 +93,10 @@ public class TodoServiceTest {
         todoService.addTODO(buildFakeTodo());
         Thread.sleep(2 * 1000);
 
+        //List<ToDo> l1 = todoService.getTodoList();
         todoService.deleteOldMessages(5);
 
+        
         assertEquals(2, todoService.getTodoList().size());
     }
 
