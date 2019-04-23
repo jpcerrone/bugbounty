@@ -21,6 +21,10 @@ public class CurrentUserService {
 			current = new User();
 		return current;
 	}
+	
+	CurrentUserService(){
+		current = new User();
+	}
 
 	public void setCurrent(User user) {
 		svc.addLog("Log-in de usuario", user);
