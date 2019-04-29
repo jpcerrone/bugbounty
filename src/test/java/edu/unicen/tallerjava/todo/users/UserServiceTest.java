@@ -43,12 +43,12 @@ public class UserServiceTest {
         savedUsers = new ArrayList<>();
         users = new User[]{
                 new User("Alejandro", 1),
-                new User("Lucía", 2),
+                new User("Lucas", 2),
                 new User("Juan", 3),
-                new User("María", 4),
+                new User("Maria", 4),
                 new User("Marcelo", 5),
                 new User("Antonela", 6),
-                new User("Sebastián", 7),
+                new User("Sebastian", 7),
                 new User("Carolina", 8),
         };
 
@@ -107,7 +107,7 @@ public class UserServiceTest {
     @Test
     public void testAddUsersAndClear() throws Exception {
         for (int i = 0; i < 2000; i++) {
-            for (int j = 0; j < 1000; j++) {
+            for (int j = 0; j < 10000; j++) {
                 userService.addUser(new User("Test", i * j));
             }
             userService.clearUsers();
@@ -118,4 +118,5 @@ public class UserServiceTest {
                 throw new Exception("Demasiada Memoria.");
         }
     }
+    
 }
