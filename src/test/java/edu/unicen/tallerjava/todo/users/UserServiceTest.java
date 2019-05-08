@@ -63,6 +63,7 @@ public class UserServiceTest {
 
         Mockito.when(repoUser.findFirstByOrderByIdDesc()).then((el) -> Optional.of(savedUsers.get(savedUsers.size() - 1)));
 
+        
         for (User user : users) {
             userService.addUser(user);
         }
@@ -111,7 +112,7 @@ public class UserServiceTest {
                 userService.addUser(new User("Test", i * j));
             }
             userService.clearUsers();
-
+            System.gc();
             long currentMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
             // Chequear que no se pase de aprox. 500MB de RAM.
             if (currentMemory > 1000 * 1000 * 500)
